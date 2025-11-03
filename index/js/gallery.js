@@ -67,3 +67,6 @@ function navNot(){
     document.getElementById('port').classList.remove('navBarDark'); 
 
 }
+
+
+
