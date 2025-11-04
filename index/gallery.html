@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script defer src="./js/gallery.js"></script>
     <script defer src="./js/app2.js"></script>
     
     <link rel="stylesheet" href="./css/app.css">
@@ -29,74 +28,82 @@
         </div>
     </h1>
     <section id="portfolio">
-        <link rel='stylesheet' href='https://unpkg.com/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.css' />
-    <script src='https://unpkg.com/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js'></script>
-    
-    <div class='scroll-animations-example' data-scroll-container>
-        <div class='scrollsection' data-scroll-section>
-            <div class='item -normal' data-scroll data-scroll-speed="2">
-                
+        <!-- removed-locomotive <div class='scroll-animations-example'-container>
+        <div class='scrollsection'-section>
+            <div class='item -normal'-speed="2">
                 <img class='image' src='./gallery photos/1.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -big' data-scroll data-scroll-speed="1">
+            <div class='item -big'-speed="1">
                 <img class='image' src='./gallery photos/2.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -small -horizontal' data-scroll data-scroll-speed="4">
+            <div class='item -small -horizontal'-speed="4">
                 <img class='image' src='./gallery photos/3.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -normal' data-scroll data-scroll-speed="3">
+            <div class='item -normal'-speed="3">
                 <img class='image' src='./gallery photos/4.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -normal -horizontal' data-scroll data-scroll-speed="2">
+            <div class='item -normal -horizontal'-speed="2">
                 <img class='image' src='./gallery photos/5.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -big -horizontal' data-scroll data-scroll-speed="4">
+            <div class='item -big -horizontal'-speed="4">
                 <img class='image' src='./gallery photos/6.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -small' data-scroll data-scroll-speed="2">
+            <div class='item -small'-speed="2">
                 <img class='image' src='./gallery photos/7.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -normal -horizontal' data-scroll data-scroll-speed="1">
+            <div class='item -normal -horizontal'-speed="1">
                 <img class='image' src='./gallery photos/8.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -small -horizontal' data-scroll data-scroll-speed="3">
+            <div class='item -small -horizontal'-speed="3">
                 <img class='image' src='./gallery photos/9.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -big' data-scroll data-scroll-speed="1">
+            <div class='item -big'-speed="1">
                 <img class='image' src='./gallery photos/10.webp' loading="lazy" alt=".." class="lazyload">
             </div>
             
-            <div class='item -normal -horizontal' data-scroll data-scroll-speed="2">
+            <div class='item -normal -horizontal'-speed="2">
                 <img class='image' src='./gallery photos/11.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -normal -horizontal' data-scroll data-scroll-speed="1">
+            <div class='item -normal -horizontal'-speed="1">
                 <img class='image' src='./gallery photos/12.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -small -horizontal' data-scroll data-scroll-speed="4">
+            <div class='item -small -horizontal'-speed="4">
                 <img class='image' src='./gallery photos/13.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -big' data-scroll data-scroll-speed="3">
+            <div class='item -big'-speed="3">
                 <img class='image' src='./gallery photos/14.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -normal -horizontal' data-scroll data-scroll-speed="2">
+            <div class='item -normal -horizontal'-speed="2">
                 <img class='image' src='./gallery photos/15.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -small -horizontal' data-scroll data-scroll-speed="4">
+            <div class='item -small -horizontal'-speed="4">
                 <img class='image' src='./gallery photos//16.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -big' data-scroll data-scroll-speed="2">
+            <div class='item -big'-speed="2">
                 <img class='image' src='./gallery photos/17.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -normal -horizontal' data-scroll data-scroll-speed="1">
+            <div class='item -normal -horizontal'-speed="1">
                 <img class='image' src='./gallery photos/18.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -small -horizontal' data-scroll data-scroll-speed="3">
+            <div class='item -small -horizontal'-speed="3">
                 <img class='image' src='./gallery photos/19.webp' loading="lazy" alt=".." class="lazyload">
             </div>
-            <div class='item -normal' data-scroll data-scroll-speed="1">
+            <div class='item -normal'-speed="1">
                 <img class='image' src='./gallery photos/20.webp' loading="lazy" alt=".." class="lazyload">
             </div>
         </div>
+    </div>
+    
+    <!-- Masonry Grid con carga infinita (sin Locomotive) -->
+    <div class="gallery-grid" id="galleryGrid" aria-label="Galería tipo Pinterest"></div>
+    <div id="infiniteSentinel" aria-hidden="true"></div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" aria-hidden="true" hidden>
+      <button class="lb-close" aria-label="Cerrar">×</button>
+      <img id="lbImage" alt="Imagen de la galería">
+      <button class="lb-prev" aria-label="Anterior">‹</button>
+      <button class="lb-next" aria-label="Siguiente">›</button>
     </div>
     </section>
     <script>
@@ -118,5 +125,6 @@
       </script>
 
 <script src="./responsive_nav.js"></script>
+    <script defer src="./js/mobile-gallery.js"></script>
 </body>
 </html>
