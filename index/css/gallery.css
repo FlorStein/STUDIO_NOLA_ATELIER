@@ -204,9 +204,6 @@ and (max-device-width : 780px)
 }}
 @media (max-width: 768px){ .logo, .logo-mali, .mali-logo, .logo-rotating, .rotate-logo { animation: none !important; transform: none !important; } }
 
-<<<<<<< HEAD
-
-=======
 /* ==== CLEAN: quitar efectos de Locomotive y habilitar scroll nativo ==== */
 html, body { overflow:auto !important; height:auto !important; }
 #portfolio{ position: static !important; padding-left: 0 !important; height:auto !important; overflow:visible !important; }
@@ -232,4 +229,3 @@ html, body { overflow:auto !important; height:auto !important; }
 .lb-prev { left:12px; top:50%; transform:translateY(-50%); }
 .lb-next { right:12px; top:50%; transform:translateY(-50%); }
 @media (pointer:coarse){ .lb-prev,.lb-next,.lb-close{ font-size:40px; padding:16px; } }
->>>>>>> 8077dc7 (Eliminar Locomotive Scroll y agregar galería tipo Pinterest con carga infinita y Lightbox)
